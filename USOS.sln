@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "USOS", "USOS\USOS.csproj", "{17A6EF22-FB04-4DE6-A835-7DD83949259E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "USOSData", "USOSData\USOSData.csproj", "{F114114A-1998-426B-84F9-A2799EDB9AAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USOSServices", "USOSServices\USOSServices.csproj", "{F666AFD6-E82E-4C8A-9A67-713DC47F1656}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17A6EF22-FB04-4DE6-A835-7DD83949259E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A6EF22-FB04-4DE6-A835-7DD83949259E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A6EF22-FB04-4DE6-A835-7DD83949259E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A6EF22-FB04-4DE6-A835-7DD83949259E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F114114A-1998-426B-84F9-A2799EDB9AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F114114A-1998-426B-84F9-A2799EDB9AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F114114A-1998-426B-84F9-A2799EDB9AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F114114A-1998-426B-84F9-A2799EDB9AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F666AFD6-E82E-4C8A-9A67-713DC47F1656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F666AFD6-E82E-4C8A-9A67-713DC47F1656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F666AFD6-E82E-4C8A-9A67-713DC47F1656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F666AFD6-E82E-4C8A-9A67-713DC47F1656}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56A4A088-5758-4C1D-831A-D7A94255411A}
+	EndGlobalSection
+EndGlobal
