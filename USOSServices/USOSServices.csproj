@@ -13,4 +13,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\USOSData\USOSData.csproj" />
+  </ItemGroup>
+
 </Project>

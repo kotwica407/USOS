@@ -10,7 +10,7 @@ using USOSData;
 namespace USOS.Migrations
 {
     [DbContext(typeof(USOSContext))]
-    [Migration("20190313114906_initial migration")]
+    [Migration("20190315102413_initial migration")]
     partial class initialmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -144,6 +144,9 @@ namespace USOS.Migrations
                         .HasMaxLength(9);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IndexNumber")
+                        .IsUnique();
 
                     b.ToTable("Students");
                 });

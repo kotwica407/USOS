@@ -12,6 +12,6 @@ namespace USOSData.Models
         [StringLength(30)]
         public string Name { get; set; }
 
-        public ICollection<Activity> Activities { get; set; } 
+        public IEnumerable<Activity> Activities { get; set; } 
     }
 }

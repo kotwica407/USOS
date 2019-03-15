@@ -143,6 +143,9 @@ namespace USOS.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IndexNumber")
+                        .IsUnique();
+
                     b.ToTable("Students");
                 });
 

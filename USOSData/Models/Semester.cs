@@ -20,8 +20,8 @@ namespace USOSData.Models
         [Display(Name = "Last day of semester")]
         public DateTime Until { get; set; }
 
-        public virtual ICollection<Semester_Student> Semester_Students { get; set; }
+        public virtual IEnumerable<Semester_Student> Semester_Students { get; set; }
 
-        public ICollection<Subject> Subjects { get; set; }
+        public IEnumerable<Subject> Subjects { get; set; }
     }
 }

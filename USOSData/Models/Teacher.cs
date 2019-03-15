@@ -6,6 +6,6 @@ namespace USOSData.Models
 {
     public class Teacher : User
     {
-        public ICollection<Activity> Activities { get; set; }
+        public IEnumerable<Activity> Activities { get; set; }
     }
 }

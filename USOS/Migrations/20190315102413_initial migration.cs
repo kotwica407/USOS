@@ -255,6 +255,12 @@ namespace USOS.Migrations
                 column: "StudentId1");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Students_IndexNumber",
+                table: "Students",
+                column: "IndexNumber",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Subjects_SemesterId",
                 table: "Subjects",
                 column: "SemesterId");

@@ -21,10 +21,15 @@ namespace USOSData
         {
             modelBuilder.Entity<Semester_Student>().HasKey(p => new { p.SemesterId, p.StudentId });
             modelBuilder.Entity<Student_Activity>().HasKey(p => new { p.StudentId, p.ActivityId });
-            modelBuilder.Entity<Student>().HasMany(p => p.Semester_Students).WithOne().HasForeignKey(p => p.StudentId);
-            modelBuilder.Entity<Semester>().HasMany(p => p.Semester_Students).WithOne().HasForeignKey(p => p.SemesterId);
-            modelBuilder.Entity<Student>().HasMany(p => p.Student_Activities).WithOne().HasForeignKey(p => p.StudentId);
-            modelBuilder.Entity<Activity>().HasMany(p => p.Student_Activities).WithOne().HasForeignKey(p => p.ActivityId);
+            modelBuilder.Entity<Student>()
+                .HasMany(p => p.Semester_Students).WithOne().HasForeignKey(p => p.StudentId);
+            modelBuilder.Entity<Semester>()
+                .HasMany(p => p.Semester_Students).WithOne().HasForeignKey(p => p.SemesterId);
+            modelBuilder.Entity<Student>()
+                .HasMany(p => p.Student_Activities).WithOne().HasForeignKey(p => p.StudentId);
+            modelBuilder.Entity<Activity>()
+                .HasMany(p => p.Student_Activities).WithOne().HasForeignKey(p => p.ActivityId);
+            modelBuilder.Entity<Student>().HasIndex(s => s.IndexNumber).IsUnique();
         }
     }
 }

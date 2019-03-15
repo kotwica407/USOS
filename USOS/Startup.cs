@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using USOSData;
+using USOSServices;
 
 namespace USOS
 {
@@ -35,6 +36,14 @@ namespace USOS
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton(Configuration);
+            services.AddScoped<IUsosStudent, UsosStudentService>();
+            services.AddScoped<IUsosTeacher, UsosTeacherService>();
+            services.AddScoped<IUsosSemester, UsosSemesterService>();
+            services.AddScoped<IUsosActivity, UsosActivityService>();
+            services.AddScoped<IUsosCourse, UsosCourseService>();
+            services.AddScoped<IUsosSemester_Student, UsosSemester_StudentService>();
+            services.AddScoped<IUsosStudent_Activity, UsosStudent_ActivityService>();
 
             services.AddDbContext<USOSContext>(options
                 => options.UseSqlServer(Configuration.GetConnectionString("USOSConnection"), b => b.MigrationsAssembly("USOS")));

@@ -1,0 +1,42 @@
+﻿@model USOS.Models.StudentIndexModel
+
+<link href="~/css/bootstrap.css" rel="stylesheet"/>
+<script src="~/js/bootstrap.js"></script>
+
+<div id="students">
+    <h3>Students Catalog</h3>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Login</th>
+                    <th>Password</th>
+                    <th>Address</th>
+                    <th>Telephone Number</th>
+                    <th>Pesel</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model.Students)
+                {
+                    <tr>
+                        <th scope="row">@student.Id</th>
+                        <td>@student.FirstName</td>
+                        <td>@student.LastName</td>
+                        <td>@student.Login</td>
+                        <td>@student.Password</td>
+                        <td>@student.Address</td>
+                        <td>@student.TelephoneNumber</td>
+                        <td>@student.Pesel</td>
+                        <td>@student.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

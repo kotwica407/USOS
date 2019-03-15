@@ -13,8 +13,8 @@ namespace USOSData.Models
         [RegularExpression(@"^[0-9]+$")]
         public string IndexNumber { get; set; }
 
-        public virtual ICollection<Semester_Student> Semester_Students { get; set; }
+        public virtual IEnumerable<Semester_Student> Semester_Students { get; set; }
         
-        public virtual ICollection<Student_Activity> Student_Activities { get; set; }
+        public virtual IEnumerable<Student_Activity> Student_Activities { get; set; }
     }
 }
