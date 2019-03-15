@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using USOSData;
 using USOSServices;
+using USOSData.Interfaces;
 
 namespace USOS
 {

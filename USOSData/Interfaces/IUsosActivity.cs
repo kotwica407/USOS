@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using USOSData.Models;
 
-namespace USOSData
+namespace USOSData.Interfaces
 {
     public interface IUsosActivity
     {
         IEnumerable<Activity> GetAll();
         Activity GetById(int id);
+        IEnumerable<Activity> GetByTeacher(int teacherId);
 
         void Add(Activity newActivity);
 

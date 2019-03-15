@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using USOSData.Models;
 
-namespace USOSData
+namespace USOSData.Interfaces
 {
     public interface IUsosStudent_Activity
     {

@@ -12,6 +12,8 @@ namespace USOSData.Models
         [StringLength(30)]
         public string Name { get; set; }
 
+        public Semester Semester { get; set; }
+
         public IEnumerable<Activity> Activities { get; set; } 
     }
 }

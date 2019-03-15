@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using USOSData.Models;
 
-namespace USOSData
+namespace USOSData.Interfaces
 {
     public interface IUsosStudent
     {
         IEnumerable<Student> GetAll();
         Student GetById(int id);
+        Student GetByIndexNumber(string indexNumber);
 
         void Add(Student newStudent);
 

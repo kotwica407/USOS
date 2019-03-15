@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using USOS.Models;
 using USOSData;
+using USOSData.Interfaces;
 using USOSData.Models;
 
 namespace USOS.Controllers

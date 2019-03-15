@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using USOSData;
+using USOSData.Interfaces;
 using USOSData.Models;
 
 namespace USOSServices
@@ -38,6 +39,12 @@ namespace USOSServices
         {
             return GetAll()
                 .FirstOrDefault(a => a.Id == id);
+        }
+
+        public Student GetByIndexNumber(string indexNumber)
+        {
+            return GetAll()
+                .FirstOrDefault(s => s.IndexNumber == indexNumber);
         }
 
         public string GetEmail(int id)

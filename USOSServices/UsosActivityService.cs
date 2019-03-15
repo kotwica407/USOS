@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using USOSData;
+using USOSData.Interfaces;
 using USOSData.Models;
 
 namespace USOSServices
@@ -33,6 +34,12 @@ namespace USOSServices
         {
             return GetAll()
                 .FirstOrDefault(a => a.Id == id);
+        }
+
+        public IEnumerable<Activity> GetByTeacher(int teacherId)
+        {
+            return GetAll()
+                .Where(a => a.Teacher.Id == teacherId);
         }
 
         public int GetGroup(int id)
