@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using USOS.Models;
+using USOS.Models.Students;
 using USOSData;
 using USOSData.Interfaces;
 using USOSData.Models;
@@ -41,6 +42,26 @@ namespace USOS.Controllers
             var model = new StudentIndexModel
             {
                 Students = listingResult
+            };
+            return View(model);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var student = _students.GetById(id);
+
+            var model = new StudentDetailModel
+            {
+                Id = id,
+                FirstName = student.FirstName,
+                LastName = student.LastName,
+                Address = student.Address,
+                Email = student.Email,
+                IndexNumber = student.IndexNumber,
+                Pesel = student.Pesel,
+                TelephoneNumber = student.TelephoneNumber,
+                Semester_Students = student.Semester_Students,
+                Student_Activities = student.Student_Activities
             };
             return View(model);
         }

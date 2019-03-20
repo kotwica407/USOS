@@ -1,0 +1,22 @@
+﻿@model USOS.Models.Teachers.TeacherDetailModel
+
+<div class="container">
+    <div class="clearfix">
+        <h2 class="text-muted">View Teacher</h2>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-4">
+            <p id="First Name">@Model.FirstName</p>
+            <p id="Last Name">@Model.LastName</p>
+        </div>
+        <div class="col-md-4">
+            <p id="PESEL">@Model.Pesel</p>
+            <p id="Address">@Model.Address</p>
+            <p id="Email">@Model.Email</p>
+            <p id="Telephone Number">@Model.TelephoneNumber</p>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-﻿@model USOS.Models.StudentIndexModel
+﻿@model USOS.Models.Students.StudentIndexModel
 
 <link href="~/css/bootstrap.css" rel="stylesheet"/>
 <script src="~/js/bootstrap.js"></script>
@@ -6,7 +6,7 @@
 <div id="students">
     <h3>Students Catalog</h3>
     <div>
-        <table class="table table-bordered">
+        <table class="table table-bordered text-center">
             <thead>
                 <tr>
                     <th>#</th>
@@ -23,17 +23,21 @@
             <tbody>
                 @foreach (var student in Model.Students)
                 {
-                    <tr>
-                        <th scope="row">@student.Id</th>
-                        <td>@student.FirstName</td>
-                        <td>@student.LastName</td>
-                        <td>@student.Login</td>
-                        <td>@student.Password</td>
-                        <td>@student.Address</td>
-                        <td>@student.TelephoneNumber</td>
-                        <td>@student.Pesel</td>
-                        <td>@student.Email</td>
-                    </tr>
+                <tr>
+                    <th scope="row">
+                        <div>
+                            <a asp-controller="Students" asp-action="Detail" asp-route-id="@student.Id">@student.Id</a>
+                        </div>
+                    </th>
+                    <td>@student.FirstName</td>
+                    <td>@student.LastName</td>
+                    <td>@student.Login</td>
+                    <td>@student.Password</td>
+                    <td>@student.Address</td>
+                    <td>@student.TelephoneNumber</td>
+                    <td>@student.Pesel</td>
+                    <td>@student.Email</td>
+                </tr>
                 }
             </tbody>
         </table>

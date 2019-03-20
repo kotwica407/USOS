@@ -1,0 +1,30 @@
+﻿@model USOS.Models.Courses.CourseIndexModel
+
+<link href="~/css/bootstrap.css" rel="stylesheet"/>
+<script src="~/js/bootstrap.js"></script>
+
+<div id="coursess">
+    <h3>Courses Catalog</h3>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Start Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var course in Model.Courses)
+                {
+                    <tr>
+                        <th scope="row">@course.Id</th>
+                        <td>@course.Name</td>
+                        <td>@course.StartYear</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

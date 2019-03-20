@@ -43,6 +43,7 @@ namespace USOS
             services.AddScoped<IUsosSemester, UsosSemesterService>();
             services.AddScoped<IUsosActivity, UsosActivityService>();
             services.AddScoped<IUsosCourse, UsosCourseService>();
+            services.AddScoped<IUsosSubject, UsosSubjectService>();
             services.AddScoped<IUsosSemester_Student, UsosSemester_StudentService>();
             services.AddScoped<IUsosStudent_Activity, UsosStudent_ActivityService>();
 

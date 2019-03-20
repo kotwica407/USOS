@@ -1,0 +1,30 @@
+﻿@model USOS.Models.Semesters.SemesterIndexModel
+
+<link href="~/css/bootstrap.css" rel="stylesheet"/>
+<script src="~/js/bootstrap.js"></script>
+
+<div id="semesters">
+    <h3>Semesters Catalog</h3>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Since</th>
+                    <th>Until</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var semester in Model.Semesters)
+                {
+                    <tr>
+                        <th scope="row">@semester.Id</th>
+                        <td>@semester.Since.ToShortDateString()</td>
+                        <td>@semester.Until.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

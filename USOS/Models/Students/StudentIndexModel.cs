@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace USOS.Models
+namespace USOS.Models.Students
 {
     public class StudentIndexModel
     {
