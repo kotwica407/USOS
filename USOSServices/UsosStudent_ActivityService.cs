@@ -33,7 +33,10 @@ namespace USOSServices
         public IEnumerable<Activity> GetActivities(int StudentId)
         {
             return _context.Activities
-                .FromSql("SELECT * FROM [dbo].[Activities] WHERE [dbo].[Students].[Id]==" + $"{StudentId}");
+                .FromSql("SELECT a.* FROM [USOS].[dbo].[Activities] a" +
+                "INNER JOIN[USOS].[dbo].[Student_Activities] ab ON a.Id = ab.ActivityId1" +
+                "INNER JOIN[USOS].[dbo].[Students] b ON ab.StudentId1 = b.Id" +
+                "WHERE b.Id = " + $"{StudentId}");
         }
 
         public IEnumerable<Student_Activity> GetAll()
@@ -58,7 +61,10 @@ namespace USOSServices
         public IEnumerable<Student> GetStudents(int ActivityId)
         {
             return _context.Students
-                .FromSql("SELECT * FROM [dbo].[Students] WHERE [dbo].[Activities].[Id]=="+$"{ActivityId}");
+                .FromSql("SELECT a.* FROM [USOS].[dbo].[Students] a" +
+                "INNER JOIN[USOS].[dbo].[Student_Activities] ab ON a.Id = ab.StudentId1" +
+                "INNER JOIN[USOS].[dbo].[Activities] b ON ab.ActivityId1 = b.Id" +
+                "WHERE b.Id = "+$"{ActivityId}");
         }
     }
 }

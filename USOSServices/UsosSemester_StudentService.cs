@@ -47,13 +47,19 @@ namespace USOSServices
         public IEnumerable<Semester> GetSemesters(int StudentId)
         {
             return _context.Semesters
-                .FromSql("SELECT * FROM [dbo].[Semesters] WHERE [dbo].[Students].[Id]==" + $"{StudentId}");
+                .FromSql("SELECT a.* FROM [USOS].[dbo].[Semesters] a " +
+                "INNER JOIN[USOS].[dbo].[Semester_Students] ab ON a.Id = ab.SemesterId1" +
+                "INNER JOIN[USOS].[dbo].[Students] b ON ab.StudentId1 = b.Id" +
+                "WHERE b.Id = "+ $"{StudentId}");
         }
 
         public IEnumerable<Student> GetStudents(int SemesterId)
         {
             return _context.Students
-                .FromSql("SELECT * FROM [dbo].[Students] WHERE [dbo].[Semesters].[Id]==" + $"{SemesterId}");
+                .FromSql("SELECT a.* FROM [USOS].[dbo].[Students] a" +
+                "INNER JOIN[USOS].[dbo].[Semester_Students] ab ON a.Id = ab.StudentId1" +
+                "INNER JOIN[USOS].[dbo].[Semesters] b ON ab.SemesterId1 = b.Id" +
+                "WHERE b.Id = " + $"{SemesterId}");
         }
     }
 }

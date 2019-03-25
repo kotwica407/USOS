@@ -65,5 +65,44 @@ namespace USOS.Controllers
             };
             return View(model);
         }
+
+        public IActionResult Create()
+        {
+            return View("Create", new Student());
+        }
+
+        [HttpPost]
+        public IActionResult CreateStudent(Student student)
+        {
+            _students.Add(student);
+            return RedirectToAction("Index", "Students");
+        }
+
+        [HttpPost]
+        public bool Delete(int id)
+        {
+            try
+            {
+                _students.Remove(id);
+                return true;
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+        }
+
+        public IActionResult Update(int id)
+        {
+            return View("Update",_students.GetById(id));
+        }
+
+        [HttpPost]
+        public IActionResult UpdateStudent(Student student)
+        {
+            _students.Update(student);
+
+            return RedirectToAction("Index", "Students");
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace USOSData.Interfaces
         Student GetByIndexNumber(string indexNumber);
 
         void Add(Student newStudent);
+        void Remove(int id);
+        void Update(Student student);
 
         string GetFirstName(int id);
         string GetLastName(int id);
