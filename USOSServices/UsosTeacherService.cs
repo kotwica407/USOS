@@ -69,5 +69,28 @@ namespace USOSServices
         {
             return GetById(id).TelephoneNumber;
         }
+
+        public void Remove(int id)
+        {
+            Teacher teacher = GetById(id);
+            _context.Teachers.Remove(teacher);
+            _context.SaveChanges();
+        }
+
+        public void Update(Teacher teacher)
+        {
+            Teacher s = GetById(teacher.Id);
+            s.Address = teacher.Address;
+            s.Email = teacher.Email;
+            s.FirstName = teacher.FirstName;
+            s.LastName = teacher.LastName;
+            s.Login = teacher.Login;
+            s.Password = teacher.Password;
+            s.Pesel = teacher.Pesel;
+            s.TelephoneNumber = teacher.TelephoneNumber;
+            s.Activities = teacher.Activities;
+
+            _context.SaveChanges();
+        }
     }
 }

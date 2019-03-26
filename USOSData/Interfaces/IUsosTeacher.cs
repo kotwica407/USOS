@@ -11,6 +11,8 @@ namespace USOSData.Interfaces
         Teacher GetById(int id);
 
         void Add(Teacher newTeacher);
+        void Remove(int id);
+        void Update(Teacher teacher);
 
         string GetFirstName(int id);
         string GetLastName(int id);

@@ -18,29 +18,67 @@
                     <th>Telephone Number</th>
                     <th>Pesel</th>
                     <th>Email</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var teacher in Model.Teachers)
                 {
-                    <tr>
-                        <th scope="row">
-                            <div>
-                                <a asp-controller="Teachers" asp-action="Detail" asp-route-id="@teacher.Id">@teacher.Id</a>
-                            </div>
-                        </th>
-                        <td>@teacher.FirstName</td>
-                        <td>@teacher.LastName</td>
-                        <td>@teacher.Login</td>
-                        <td>@teacher.Password</td>
-                        <td>@teacher.Address</td>
-                        <td>@teacher.TelephoneNumber</td>
-                        <td>@teacher.Pesel</td>
-                        <td>@teacher.Email</td>
-                    </tr>
+                <tr>
+                    <th scope="row">
+                        <div>
+                            <a asp-controller="Teachers" asp-action="Detail" asp-route-id="@teacher.Id">@teacher.Id</a>
+                        </div>
+                    </th>
+                    <td>@teacher.FirstName</td>
+                    <td>@teacher.LastName</td>
+                    <td>@teacher.Login</td>
+                    <td>@teacher.Password</td>
+                    <td>@teacher.Address</td>
+                    <td>@teacher.TelephoneNumber</td>
+                    <td>@teacher.Pesel</td>
+                    <td>@teacher.Email</td>
+                    <td>
+                        <a asp-controller="Teachers" asp-action="Update" asp-route-id="@teacher.Id">
+                            <input type="button" value="Update" />
+                        </a>
+                    </td>
+                    <td><button onclick="Delete('@teacher.Id')">Delete</button></td>
+                </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
+
+<script>
+    function Delete(id) {
+        var txt;
+        var r = confirm("Are you sure you want to delete?");
+        if (r == true) {
+            $.ajax(
+                {
+                    type: "POST",
+                    url: '@Url.Action("Delete", "Teachers")',
+                    data: {
+                        id: id
+                    },
+                    error: function (result) {
+                        alert("error");
+                    },
+                    success: function (result) {
+                        if (result == true) {
+                            var baseUrl = "/Teachers/Index";
+                            window.location.reload();
+                        }
+                        else {
+                            alert("There is a problem. Try later");
+                        }
+                    }
+                }
+            );
+        }
+    }
+</script>
 

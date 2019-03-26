@@ -18,6 +18,8 @@
                     <th>Telephone Number</th>
                     <th>Pesel</th>
                     <th>Email</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -37,10 +39,46 @@
                     <td>@student.TelephoneNumber</td>
                     <td>@student.Pesel</td>
                     <td>@student.Email</td>
+                    <td>
+                        <a asp-controller="Students" asp-action="Update" asp-route-id="@student.Id">
+                            <input type="button" value="Update" />
+                        </a>
+                    </td>
+                    <td><button onclick="Delete('@student.Id')">Delete</button></td>
                 </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
+
+<script>
+    function Delete(id) {
+        var txt;
+        var r = confirm("Are you sure you want to delete?");
+        if (r == true) {
+            $.ajax(
+                {
+                    type: "POST",
+                    url: '@Url.Action("Delete", "Students")',
+                    data: {
+                        id: id
+                    },
+                    error: function (result) {
+                        alert("error");
+                    },
+                    success: function (result) {
+                        if (result == true) {
+                            var baseUrl = "/Students/Index";
+                            window.location.reload();
+                        }
+                        else {
+                            alert("There is a problem. Try later");
+                        }
+                    }
+                }
+            );
+        }
+    }
+</script>
 
