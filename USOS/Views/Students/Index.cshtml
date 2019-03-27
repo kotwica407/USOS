@@ -1,58 +1,64 @@
 ﻿@model USOS.Models.Students.StudentIndexModel
 
-<link href="~/css/bootstrap.css" rel="stylesheet"/>
 <script src="~/js/bootstrap.js"></script>
+<link rel="stylesheet" href="~/css/style.css" />
 
-<div id="students">
-    <h3>Students Catalog</h3>
-    <div>
-        <table class="table table-bordered text-center">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Login</th>
-                    <th>Password</th>
-                    <th>Address</th>
-                    <th>Telephone Number</th>
-                    <th>Pesel</th>
-                    <th>Email</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var student in Model.Students)
-                {
-                <tr>
-                    <th scope="row">
-                        <div>
-                            <a asp-controller="Students" asp-action="Detail" asp-route-id="@student.Id">@student.Id</a>
-                        </div>
-                    </th>
-                    <td>@student.FirstName</td>
-                    <td>@student.LastName</td>
-                    <td>@student.Login</td>
-                    <td>@student.Password</td>
-                    <td>@student.Address</td>
-                    <td>@student.TelephoneNumber</td>
-                    <td>@student.Pesel</td>
-                    <td>@student.Email</td>
-                    <td>
-                        <a asp-controller="Students" asp-action="Update" asp-route-id="@student.Id">
-                            <input type="button" value="Update" />
-                        </a>
-                    </td>
-                    <td><button onclick="Delete('@student.Id')">Delete</button></td>
-                </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+<div id="container">
+    <div id="users">
+        <div id="topbar">
+
+        </div>
+        <div id="content">
+            <table >
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Login</th>
+                        <th>Password</th>
+                        <th>Address</th>
+                        <th>Telephone Number</th>
+                        <th>Pesel</th>
+                        <th>Email</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model.Students)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-controller="Students" asp-action="Detail" asp-route-id="@student.Id">@student.Id</a>
+                            </td>
+                            <td>@student.FirstName</td>
+                            <td>@student.LastName</td>
+                            <td>@student.Login</td>
+                            <td>@student.Password</td>
+                            <td>@student.Address</td>
+                            <td>@student.TelephoneNumber</td>
+                            <td>@student.Pesel</td>
+                            <td>@student.Email</td>
+                            <td>
+                                <a asp-controller="Students" asp-action="Update" asp-route-id="@student.Id">
+                                    <input type="button" value="Update" />
+                                </a>
+                            </td>
+                            <td><button onclick="Delete('@student.Id')">Delete</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div id="footer">
+
+        </div>
 </div>
+</div>
+    
 
-<script>
+    <script>
     function Delete(id) {
         var txt;
         var r = confirm("Are you sure you want to delete?");
@@ -80,5 +86,5 @@
             );
         }
     }
-</script>
+    </script>
 

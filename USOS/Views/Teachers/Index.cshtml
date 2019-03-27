@@ -1,54 +1,58 @@
 ﻿@model USOS.Models.Teachers.TeacherIndexModel
 
-<link href="~/css/bootstrap.css" rel="stylesheet"/>
 <script src="~/js/bootstrap.js"></script>
 
-<div id="teachers">
-    <h3>Teachers Catalog</h3>
-    <div>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Login</th>
-                    <th>Password</th>
-                    <th>Address</th>
-                    <th>Telephone Number</th>
-                    <th>Pesel</th>
-                    <th>Email</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var teacher in Model.Teachers)
-                {
-                <tr>
-                    <th scope="row">
-                        <div>
-                            <a asp-controller="Teachers" asp-action="Detail" asp-route-id="@teacher.Id">@teacher.Id</a>
-                        </div>
-                    </th>
-                    <td>@teacher.FirstName</td>
-                    <td>@teacher.LastName</td>
-                    <td>@teacher.Login</td>
-                    <td>@teacher.Password</td>
-                    <td>@teacher.Address</td>
-                    <td>@teacher.TelephoneNumber</td>
-                    <td>@teacher.Pesel</td>
-                    <td>@teacher.Email</td>
-                    <td>
-                        <a asp-controller="Teachers" asp-action="Update" asp-route-id="@teacher.Id">
-                            <input type="button" value="Update" />
-                        </a>
-                    </td>
-                    <td><button onclick="Delete('@teacher.Id')">Delete</button></td>
-                </tr>
-                }
-            </tbody>
-        </table>
+<div id="container">
+    <div id="users">
+        <div id="topbar">
+
+        </div>
+        <div id="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Login</th>
+                        <th>Password</th>
+                        <th>Address</th>
+                        <th>Telephone Number</th>
+                        <th>Pesel</th>
+                        <th>Email</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var teacher in Model.Teachers)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-controller="Teachers" asp-action="Detail" asp-route-id="@teacher.Id">@teacher.Id</a>
+                            </td>
+                            <td>@teacher.FirstName</td>
+                            <td>@teacher.LastName</td>
+                            <td>@teacher.Login</td>
+                            <td>@teacher.Password</td>
+                            <td>@teacher.Address</td>
+                            <td>@teacher.TelephoneNumber</td>
+                            <td>@teacher.Pesel</td>
+                            <td>@teacher.Email</td>
+                            <td>
+                                <a asp-controller="Students" asp-action="Update" asp-route-id="@teacher.Id">
+                                    <input type="button" value="Update" />
+                                </a>
+                            </td>
+                            <td><button onclick="Delete('@teacher.Id')">Delete</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div id="footer">
+
+        </div>
     </div>
 </div>
 

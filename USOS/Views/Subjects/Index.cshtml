@@ -1,12 +1,10 @@
 ﻿@model USOS.Models.Subjects.SubjectIndexModel
 
-<link href="~/css/bootstrap.css" rel="stylesheet"/>
 <script src="~/js/bootstrap.js"></script>
 
-<div id="subjects">
-    <h3>Subjects Catalog</h3>
-    <div>
-        <table class="table table-bordered">
+<div id="container">
+    <div id="content">
+        <table>
             <thead>
                 <tr>
                     <th>#</th>
@@ -17,7 +15,7 @@
                 @foreach (var subject in Model.Subjects)
                 {
                     <tr>
-                        <th scope="row">@subject.Id</th>
+                        <td>@subject.Id</td>
                         <td>@subject.Name</td>
                     </tr>
                 }
@@ -25,4 +23,3 @@
         </table>
     </div>
 </div>
-

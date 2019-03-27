@@ -1,11 +1,9 @@
 ﻿@model USOS.Models.Activities.ActivityIndexModel
 
-<link href="~/css/bootstrap.css" rel="stylesheet"/>
 <script src="~/js/bootstrap.js"></script>
 
-<div id="coursess">
-    <h3>Courses Catalog</h3>
-    <div>
+<div id="container">
+    <div id="content">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -18,17 +16,16 @@
             <tbody>
                 @foreach (var activity in Model.Activities)
                 {
-                <tr>
-                    <th scope="row">@activity.Id</th>
-                    <td>@activity.Type</td>
-                    <td>@activity.Group</td>
-                    <td>
-                        <a asp-controller="Subjects" asp-action="Detail" asp-route-id="@activity.Subject.Id">@activity.Subject.Name</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>@activity.Id</td>
+                        <td>@activity.Type</td>
+                        <td>@activity.Group</td>
+                        <td>
+                            <a asp-controller="Subjects" asp-action="Detail" asp-route-id="@activity.Subject.Id">@activity.Subject.Name</a>
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
-

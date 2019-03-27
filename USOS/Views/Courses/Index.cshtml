@@ -1,12 +1,10 @@
 ﻿@model USOS.Models.Courses.CourseIndexModel
 
-<link href="~/css/bootstrap.css" rel="stylesheet"/>
 <script src="~/js/bootstrap.js"></script>
 
-<div id="coursess">
-    <h3>Courses Catalog</h3>
-    <div>
-        <table class="table table-bordered">
+<div id="container">
+    <div id="content">
+        <table>
             <thead>
                 <tr>
                     <th>#</th>
@@ -18,7 +16,7 @@
                 @foreach (var course in Model.Courses)
                 {
                     <tr>
-                        <th scope="row">@course.Id</th>
+                        <td>@course.Id</td>
                         <td>@course.Name</td>
                         <td>@course.StartYear</td>
                     </tr>
@@ -27,4 +25,6 @@
         </table>
     </div>
 </div>
+
+
 
