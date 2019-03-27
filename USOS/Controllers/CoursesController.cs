@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using USOS.Models;
+using USOS.Models.Activities;
 using USOS.Models.Courses;
 using USOSData.Interfaces;
 

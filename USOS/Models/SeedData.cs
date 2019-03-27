@@ -21,6 +21,7 @@ namespace USOS.Models
                 dontNeedToSeed &= context.Courses.Any();
                 dontNeedToSeed &= context.Semesters.Any();
                 dontNeedToSeed &= context.Subjects.Any();
+                dontNeedToSeed &= context.Activities.Any();
 
                 if (dontNeedToSeed)
                     return;
@@ -189,6 +190,36 @@ namespace USOS.Models
                         {
                             Semester = semester,
                             Name = "Bezpieczenstwo i higiena pracy"
+                        }
+                        );
+                    context.SaveChanges();
+                }
+                if (context.Activities.Any() == false)
+                {
+                    var subject = context.Subjects.FirstOrDefault(s => s.Id == 1);
+                    var teacher1 = context.Teachers.FirstOrDefault(t => t.Id == 1);
+                    var teacher2 = context.Teachers.FirstOrDefault(t => t.Id == 2);
+                    context.Activities.AddRange(
+                        new Activity
+                        {
+                            Subject = subject,
+                            Group = 1,
+                            Type = "Wykład",
+                            Teacher = teacher1
+                        },
+                        new Activity
+                        {
+                            Subject = subject,
+                            Group = 1,
+                            Type = "Ćwiczenia",
+                            Teacher = teacher1
+                        },
+                        new Activity
+                        {
+                            Subject = subject,
+                            Group = 2,
+                            Type = "Ćwiczenia",
+                            Teacher = teacher2
                         }
                         );
                     context.SaveChanges();

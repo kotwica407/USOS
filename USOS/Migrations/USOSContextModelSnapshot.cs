@@ -234,7 +234,7 @@ namespace USOS.Migrations
 
             modelBuilder.Entity("USOSData.Models.Activity", b =>
                 {
-                    b.HasOne("USOSData.Models.Subject")
+                    b.HasOne("USOSData.Models.Subject", "Subject")
                         .WithMany("Activities")
                         .HasForeignKey("SubjectId");
 
@@ -295,7 +295,7 @@ namespace USOS.Migrations
 
             modelBuilder.Entity("USOSData.Models.Subject", b =>
                 {
-                    b.HasOne("USOSData.Models.Semester")
+                    b.HasOne("USOSData.Models.Semester", "Semester")
                         .WithMany("Subjects")
                         .HasForeignKey("SemesterId");
                 });

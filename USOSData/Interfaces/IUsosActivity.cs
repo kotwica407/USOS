@@ -8,11 +8,13 @@ namespace USOSData.Interfaces
         IEnumerable<Activity> GetAll();
         Activity GetById(int id);
         IEnumerable<Activity> GetByTeacher(int teacherId);
+        IEnumerable<Activity> GetBySubject(int subjectId);
 
         void Add(Activity newActivity);
 
         string GetType(int id);
         int GetGroup(int id);
         Teacher GetTeacher(int id);
+        Subject GetSubject(int id);
     }
 }

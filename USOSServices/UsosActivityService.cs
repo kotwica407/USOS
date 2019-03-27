@@ -27,7 +27,9 @@ namespace USOSServices
         public IEnumerable<Activity> GetAll()
         {
             return _context.Activities
-                .Include(a => a.Student_Activities);
+                .Include(a => a.Student_Activities)
+                .Include(s => s.Subject)
+                .Include(t => t.Teacher);
         }
 
         public Activity GetById(int id)
@@ -52,9 +54,20 @@ namespace USOSServices
             return GetById(id).Teacher;
         }
 
+        public Subject GetSubject(int id)
+        {
+            return GetById(id).Subject;
+        }
+
         public string GetType(int id)
         {
             return GetById(id).Type;
+        }
+
+        public IEnumerable<Activity> GetBySubject(int subjectId)
+        {
+            return GetAll()
+                .Where(a => a.Subject.Id == subjectId);
         }
     }
 }

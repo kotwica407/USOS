@@ -17,6 +17,8 @@ namespace USOSData.Models
 
         public Teacher Teacher { get; set; }
 
+        public Subject Subject { get; set; }
+
         public virtual IEnumerable<Student_Activity> Student_Activities { get; set; }
     }
 }

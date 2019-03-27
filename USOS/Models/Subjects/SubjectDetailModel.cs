@@ -6,11 +6,13 @@ using USOSData.Models;
 
 namespace USOS.Models.Subjects
 {
-    public class SubjectIndexListingModel
+    public class SubjectDetailModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IEnumerable<Activity> Activities { get; set; }
+
         public Semester Semester { get; set; }
+
+        public IEnumerable<Activity> Activities { get; set; }
     }
 }

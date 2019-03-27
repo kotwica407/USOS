@@ -10,7 +10,7 @@ using USOSData;
 namespace USOS.Migrations
 {
     [DbContext(typeof(USOSContext))]
-    [Migration("20190315102413_initial migration")]
+    [Migration("20190327082611_initial migration")]
     partial class initialmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -236,7 +236,7 @@ namespace USOS.Migrations
 
             modelBuilder.Entity("USOSData.Models.Activity", b =>
                 {
-                    b.HasOne("USOSData.Models.Subject")
+                    b.HasOne("USOSData.Models.Subject", "Subject")
                         .WithMany("Activities")
                         .HasForeignKey("SubjectId");
 
@@ -297,7 +297,7 @@ namespace USOS.Migrations
 
             modelBuilder.Entity("USOSData.Models.Subject", b =>
                 {
-                    b.HasOne("USOSData.Models.Semester")
+                    b.HasOne("USOSData.Models.Semester", "Semester")
                         .WithMany("Subjects")
                         .HasForeignKey("SemesterId");
                 });
