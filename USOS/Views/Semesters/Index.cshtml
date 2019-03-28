@@ -16,7 +16,7 @@
                 @foreach (var semester in Model.Semesters)
                 {
                     <tr>
-                        <td>@semester.Id</td>
+                        <td class="td-id">@semester.Id</td>
                         <td>@semester.Since.ToShortDateString()</td>
                         <td>@semester.Until.ToShortDateString()</td>
                     </tr>

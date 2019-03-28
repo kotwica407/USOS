@@ -1,5 +1,6 @@
 ﻿body {
-    background-color: #a3e0c2
+    background-color: #a3e0c2;
+    margin: 0 !important;
 }
 
 #container
@@ -10,13 +11,15 @@
     margin-right: auto;
 }
 
-#menu
-{
+#menu {
     background-color: #303030;
-    margin-top: 20px;
+    top: 0;
     height: 45px;
+    width: 100%;
     color: white;
     padding: 10px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
 }
 
 .option
@@ -85,9 +88,21 @@ td:hover
 
 }
 
+.td-id
+{
+    text-align: center;
+}
+
 #topbar
 {
 
+}
+
+#table-header
+{
+    font-weight: bold;
+    font-size: 48px;
+    text-align: left;
 }
 
 #content
