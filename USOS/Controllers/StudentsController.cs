@@ -94,7 +94,7 @@ namespace USOS.Controllers
 
         public IActionResult Update(int id)
         {
-            return View("Update",_students.GetById(id));
+            return View("Update", _students.GetById(id));
         }
 
         [HttpPost]

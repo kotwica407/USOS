@@ -99,7 +99,7 @@ namespace USOS.Controllers
         {
             _teachers.Update(teacher);
 
-            return RedirectToAction("Index", "Teacher");
+            return RedirectToAction("Index", "Teachers");
         }
     }
 }
